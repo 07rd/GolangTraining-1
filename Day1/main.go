@@ -13,6 +13,9 @@ func main() {
 	pyramid(5, false)
 	fmt.Println("Assignment 4")
 	factorialNum(5)
+	fmt.Println("===============================================\n")
+	fmt.Println("Assignment 5")
+	isPrime(11)
 }
 
 func pyramid(rowNumber int, astric bool) {
@@ -43,4 +46,18 @@ func factorialNum(num int) {
 			value *= i
 		}
 	fmt.Println(fmt.Sprint("Factorial of number ", num, " is ", value))
+}
+
+func isPrime(num int) {
+	if num < 2 {
+		fmt.Println(fmt.Sprint("Not a prime number ", num))
+		return
+	}
+	for i := 2; i <= num/2; i++ {
+		if num%i == 0 {
+			fmt.Println(fmt.Sprint("Not a prime number ", num))
+			return
+		}
+	}
+	fmt.Println(fmt.Sprint(num, " is a prime number "))	
 }
